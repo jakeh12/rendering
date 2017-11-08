@@ -28,11 +28,11 @@ int main(int argc,char **argv)
 			case KeyPress:
 				if(event.xkey.keycode == XKeysymToKeycode(display, XK_Escape))
 				{
-					exit(0);
+					XCloseDisplay(display);
+					exit(EXIT_SUCCESS);
 				}
 		}
 	}
-	XCloseDisplay(display);
 	return 0;
 }
 
